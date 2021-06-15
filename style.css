@@ -27,6 +27,9 @@ body {
   background-color: black;
   position: relative;
   left: 400px;
+}
+
+.pause {
   animation: pipe 2s infinite linear;
 }
 
@@ -37,10 +40,10 @@ body {
   position: relative;
   left: 400px;
   top: -500px;
-  animation: pipe 2s infinite linear;
+
 }
 
-#bird {
+.bird {
   width: 30px;
   height: 30px;
   background-color: blue;
@@ -52,6 +55,12 @@ body {
 
 #score {
   text-align: center;
+}
+
+#reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes pipe {
