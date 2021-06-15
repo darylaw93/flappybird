@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+body {
+  background-color: grey;
+}
+
 #game {
   /*sets the layout of the game*/
   height: 500px;
@@ -14,6 +18,7 @@
   border: 1px solid black;
   margin: auto;
   overflow: hidden;
+  background-color: aquamarine;
 }
 
 #pipes {
@@ -22,17 +27,17 @@
   background-color: black;
   position: relative;
   left: 400px;
-  animation: pipe 1s infinite linear;
+  animation: pipe 2s infinite linear;
 }
 
 #hole {
   width: 50px;
   height: 150px;
-  background-color: white;
+  background-color: aquamarine;
   position: relative;
   left: 400px;
   top: -500px;
-  animation: pipe 1s infinite linear;
+  animation: pipe 2s infinite linear;
 }
 
 #bird {
@@ -42,25 +47,45 @@
   border-radius: 50%; /*turns object into a circle*/
   top: 250px;
   position: absolute;
+  content:url(https://e7.pngegg.com/pngimages/328/754/png-clipart-flappy-bird-blue-minecraft-bird-flappy-bird-bird-thumbnail.png)
+}
+
+#score {
+  text-align: center;
 }
 
 @keyframes pipe {
   0% {
     left: 444px;
   } /* pipe starting position */
-  25% {
-    left: 333px;
+  /* 10% {
+    left: 400px;
+  }
+  20% {
+    left: 350px;
+  }
+  30% {
+    left: 300px;
+  }
+  40% {
+    left: 250px;
   }
   50% {
-    left: 222px;
+    left: 200px;
+  } 
+  60% {
+    left: 150px;
   }
-  75% {
-    left: 111px;
+  70% {
+    left: 100px;
   }
-  85% {
-    left: 55px;
+  80% {
+    left: 50px;
   }
+  90% {
+    left: 25px;
+  } */
   100% {
-    left: -20px;
-  } /* ending position */
+    left: -25px;
+  }/* ending position */
 }
