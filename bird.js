@@ -35,17 +35,9 @@ setInterval(function () {
     bird.css("top", "+=3");
     let left = block.css("left");
     let hole = holes.css("top");
-    let birdHitbox = -(500 - birdTop);
-    if (
-      birdTop > 480 ||
-      (left < 20 &&
-        left > -50 &&
-        (birdHitbox < hole || birdHitbox > hole + 130))
-    ) {
-      alert("game over");
+
     }
-  }
-}, 15);
+  }, 15);
 
 ///////Jumping & Jumping
 game.on("click", () => {
