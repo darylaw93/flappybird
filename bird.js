@@ -11,7 +11,6 @@ game.append(
 game.append($("<div>").attr("id", "hole").addClass("pause").addClass("resume"));
 game.append($("<div>").attr("id", "char"));
 game.append($("<div>").attr("id", "bird").addClass("img").addClass("bird"));
-
 let score = 0;
 $("body").append(
   $("<h2>")
@@ -44,29 +43,33 @@ resetButton.click(function () {
   bird.addClass("bird");
   score = 0;
   $("h2").text("Points: " + 0);
+  startGame();
 });
 
 ///gravity
-let gravity = setInterval(function () {
-  if (jump === 0) {
-    bird.css("top", "+=3");
-  }
-  ////collision
-  let birdHeight = parseInt($("#bird").css("top"));
-  let left = parseInt($("#pipes").css("left"));
-  let hole = parseInt($("#hole").css("top"));
-  let birdVal = -(500 - birdHeight); // negative value due to the "hole" value being negative
-  // if((birdHeight > 500)||((birdHeight = left)&&(birdHeight = left -50)))
-  //collision done with help from google & friend.
-  if (
-    birdHeight > 500 ||
-    (left < 20 && left > -50 && (birdVal < hole - 10 || birdVal > hole + 150))
-  ) {
-    resume.removeClass("pause");
-    bird.removeClass("bird");
-  }
-}, 10);
-
+const startGame = () => {
+  let gravity = setInterval(function () {
+    if (jump === 0) {
+      bird.css("top", "+=3");
+    }
+    ////collision
+    let birdHeight = parseInt($("#bird").css("top"));
+    let left = parseInt($("#pipes").css("left"));
+    let hole = parseInt($("#hole").css("top"));
+    let birdVal = -(500 - birdHeight); // negative value due to the "hole" value being negative
+    // if((birdHeight > 500)||((birdHeight = left)&&(birdHeight = left -50)))
+    //collision done with help from google & friend.
+    if (
+      birdHeight > 500 ||
+      (left < 20 && left > -50 && (birdVal < hole - 10 || birdVal > hole + 150))
+    ) {
+      resume.removeClass("pause");
+      bird.removeClass("bird");
+      clearInterval(gravity);
+      $("h2").text("Game Over! Your score is " + score);
+    }
+  }, 10);
+};
 /////Jumping
 game.on("click", () => {
   let birdHeight = parseInt($("#bird").css("top"));
@@ -88,3 +91,5 @@ game.on("click", () => {
     jumpCount++;
   }, 10); //jump function will be called every 10ms
 });
+
+startGame();
