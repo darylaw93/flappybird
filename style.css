@@ -18,7 +18,7 @@ body {
   border: 1px solid black;
   margin: auto;
   overflow: hidden;
-  background-color: aquamarine;
+  background-color: white;
 }
 
 #pipes {
@@ -29,18 +29,17 @@ body {
   left: 400px;
 }
 
-.pause {
-  animation: pipe 2s infinite linear;
-}
-
 #hole {
   width: 50px;
   height: 150px;
-  background-color: aquamarine;
+  background-color: white;
   position: relative;
   left: 400px;
   top: -500px;
+}
 
+.pause {
+  animation: pipe 2s infinite linear;
 }
 
 .bird {
@@ -57,7 +56,7 @@ body {
   text-align: center;
 }
 
-#reset {
+#divButton {
   display: flex;
   align-items: center;
   justify-content: center;
