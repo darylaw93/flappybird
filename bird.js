@@ -30,7 +30,8 @@ let resume = $(".resume");
 // it needs to be between -150px to -450px, the pipe is 500px
 //set numbers to a variable etc 300, 150
 holes.on("animationiteration", () => {
-  let random = -(Math.random() * 300 + 150);
+  let holeHeight = 300
+  let random = -((Math.random() * holeHeight)+150);
   holes.css("top", random);
   score++;
   $("h2").text("Points: " + score);
@@ -56,11 +57,12 @@ const startGame = () => {
     let birdHeight = parseInt($("#bird").css("top"));
     let left = parseInt($("#pipes").css("left"));
     let hole = parseInt($("#hole").css("top"));
-    let birdVal = -(500 - birdHeight); // negative value due to the "hole" value being negative
+    let maxHeight = 500
+    let birdVal = -(maxHeight - birdHeight); // negative value due to the "hole" value being negative
     // if((birdHeight > 500)||((birdHeight = left)&&(birdHeight = left -50)))
     //collision done with help from google & friend.
     if (
-      birdHeight > 500 ||
+      birdHeight > maxHeight ||
       (left < 20 && left > -50 && (birdVal < hole - 10 || birdVal > hole + 150))
     ) {
       resume.removeClass("pause");
