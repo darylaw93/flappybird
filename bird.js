@@ -12,11 +12,8 @@ game.append($("<div>").attr("id", "hole").addClass("pause").addClass("resume"));
 game.append($("<div>").attr("id", "char"));
 game.append($("<div>").attr("id", "bird").addClass("img").addClass("bird"));
 let score = 0;
-$("body").append(
-  $("<h2>")
-    .attr("id", "score")
-    .text("Points: " + score)
-);
+$("body").append($("<h2>").attr("id", "score").text("Points: " + score));
+$("body").append($("<h3>").attr("id", "controls").text("Mouse 1 - Jump"));
 $("body").append($("<div>").attr("id", "divButton").append(button));
 
 let block = $("#pipes");
@@ -37,7 +34,7 @@ holes.on("animationiteration", () => {
   $("h2").text("Points: " + score);
 });
 
-//reset
+//reset button
 resetButton.click(function () {
   bird.css("top", 250);
   resume.addClass("pause");
@@ -53,6 +50,7 @@ const startGame = () => {
     if (jump === 0) {
       bird.css("top", "+=3");
     }
+
     ////collision
     let birdHeight = parseInt($("#bird").css("top"));
     let left = parseInt($("#pipes").css("left"));
@@ -72,6 +70,7 @@ const startGame = () => {
     }
   }, 10);
 };
+
 /////Jumping
 game.on("click", () => {
   let birdHeight = parseInt($("#bird").css("top"));

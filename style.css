@@ -54,6 +54,10 @@
   text-align: center;
 }
 
+#controls {
+  text-align: center;
+}
+
 #divButton {
   display: flex;
   align-items: center;
