@@ -22,6 +22,8 @@ Solution: Gaps were in the negative value and for the bird to pass, its CSS posi
 
 Start screen without breaking the game
 
+Pipes that move up and down randomly in higher difficulties
+
 Graphical Improvements
 
 Cleaner Code
