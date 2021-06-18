@@ -1,10 +1,10 @@
 # Flappy-Bird
 
-# Overall game flow
+## Overall game flow
 
 Game Start -> Avoid Obstacles -> Collision -> Game Ends
 
-# Most challenging part of the project
+## Most challenging part of the project
 
 /Jumping animation/
 
@@ -18,7 +18,7 @@ Could get the collision on the pipes but couldn't get the bird to go through the
 
 Solution: Gaps were in the negative value and for the bird to pass, its CSS position had to be defined in negative instead
 
-# Further work and next steps
+## Further work and next steps
 
 Start screen without breaking the game
 
