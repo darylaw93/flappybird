@@ -23,9 +23,9 @@ let resetButton = $("#reset");
 let jump = 0;
 let resume = $(".resume");
 
+
 // randomise the position of the hole
 // it needs to be between -150px to -450px, the pipe is 500px
-//set numbers to a variable etc 300, 150
 holes.on("animationiteration", () => {
   let holeHeight = 300;
   let random = -(Math.random() * holeHeight + 150);
@@ -57,7 +57,6 @@ const startGame = () => {
     let hole = parseInt($("#hole").css("top"));
     let maxHeight = 500;
     let birdVal = -(maxHeight - birdHeight); // negative value due to the "hole" value being negative
-    // if((birdHeight > 500)||((birdHeight = left)&&(birdHeight = left -50)))
     //collision done with help from google & friend.
     if (
       birdHeight > maxHeight ||
